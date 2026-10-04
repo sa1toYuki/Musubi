@@ -1,0 +1,54 @@
+Licenças e avisos de componentes de terceiros
+==============================================
+
+Musubi usa os componentes listados abaixo. As licenças do código do
+aplicativo estão em LICENSE; os scripts de build obtêm os fontes indicados.
+
+FFmpeg
+------
+O FFmpeg é licenciado sob a GNU Lesser General Public License versão 2.1 ou
+posterior (LGPL-2.1-or-later), exceto partes opcionais que podem estar sob a
+GPL. Os scripts deste repositório configuram o FFmpeg sem --enable-gpl,
+--enable-version3 e --enable-nonfree e sem codecs extras habilitados.
+
+Código-fonte e licença:
+https://ffmpeg.org/
+https://github.com/FFmpeg/FFmpeg
+https://github.com/FFmpeg/FFmpeg/blob/master/COPYING.LGPLv2.1
+
+libebml e libmatroska
+---------------------
+libebml e libmatroska são distribuídas sob a GNU Lesser General Public License
+versão 2.1 (LGPL-2.1). O código-fonte é obtido pelos scripts deste repositório.
+
+Código-fonte:
+https://github.com/Matroska-Org/libebml
+https://github.com/Matroska-Org/libmatroska
+
+Qt
+--
+O build usa Qt 6 para MSVC e limita o código da aplicação aos módulos Core,
+Gui e Widgets. Os binários Qt redistribuídos devem permanecer dinâmicos e
+acompanhar os avisos e termos LGPLv3 da versão instalada.
+
+Código-fonte e termos:
+https://www.qt.io/
+https://doc.qt.io/qt-6/licensing.html
+
+MKVToolNix
+----------
+O README do código-fonte oficial declara exatamente: “This code comes under
+the GPL v2 (see www.gnu.org or the file COPYING).” Este aviso é registrado sem
+acrescentar “or later”.
+
+Código-fonte:
+https://gitlab.com/mbunkus/mkvtoolnix
+https://mkvtoolnix.download/source.html
+
+Fontes obtidas pelo build
+-------------------------
+Os scripts em scripts/fetch_sources.sh, scripts/build_matroska.sh,
+scripts/build_ffmpeg.sh, scripts/build_ffmpeg_msvc.sh e
+scripts/build_mkvtoolnix.sh identificam os downloads, versões e etapas de
+compilação usados por este projeto. Consulte os avisos de licença e os arquivos
+COPYING incluídos nas próprias fontes para os termos completos de cada versão.

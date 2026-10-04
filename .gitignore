@@ -1,0 +1,23 @@
+# Build outputs and packaged releases
+build/
+dist/
+cpp/build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+*.spec.bak
+
+# IDE
+.vscode/
+.idea/
+
+# Test outputs
+*_TEMP.mkv
+[CFSB]*.mkv
+[CFSB]*.json
+[CFSB]*.webp
+
+# OS
+Thumbs.db
+Desktop.ini

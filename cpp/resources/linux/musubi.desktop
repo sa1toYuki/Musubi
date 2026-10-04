@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Musubi
+Comment=Multiplexador MKV
+Exec=Musubi
+Icon=musubi
+Categories=AudioVideo;Video;
+Terminal=false

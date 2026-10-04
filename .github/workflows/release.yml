@@ -1,0 +1,44 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.12.0"
+          arch: "win64_msvc2022_64"
+          modules: "qtbase"
+
+      - name: Build executable
+        shell: pwsh
+        run: |
+          cmake -S cpp -B build/release -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$env:QT_ROOT_DIR" -DCMAKE_INSTALL_PREFIX="$PWD/dist/Musubi"
+          cmake --build build/release --parallel
+          cmake --install build/release --config Release
+          windeployqt --release --no-translations --dir dist/Musubi dist/Musubi/Musubi.exe
+
+      - name: Create release archive
+        shell: pwsh
+        run: |
+          Compress-Archive -Path "dist/Musubi/*" -DestinationPath "dist/Musubi-windows-x64.zip"
+
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/Musubi-windows-x64.zip
+          generate_release_notes: true

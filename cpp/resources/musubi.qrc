@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="/icons">
+    <file alias="musubi-16.png">icons/png/16x16/musubi.png</file>
+    <file alias="musubi-32.png">icons/png/32x32/musubi.png</file>
+    <file alias="musubi-48.png">icons/png/48x48/musubi.png</file>
+    <file alias="musubi-64.png">icons/png/64x64/musubi.png</file>
+    <file alias="musubi-128.png">icons/png/128x128/musubi.png</file>
+    <file alias="musubi-256.png">icons/png/256x256/musubi.png</file>
+    <file alias="musubi-512.png">icons/png/512x512/musubi.png</file>
+  </qresource>
+  <qresource prefix="/styles">
+    <file alias="musubi.qss">musubi.qss</file>
+  </qresource>
+</RCC>
