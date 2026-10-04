@@ -28,8 +28,8 @@ jobs:
       - name: Build executable
         shell: pwsh
         run: |
-          cmake -S cpp -B build/release -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$env:QT_ROOT_DIR" -DCMAKE_INSTALL_PREFIX="$PWD/dist/Musubi"
-          cmake --build build/release --parallel
+          cmake -S cpp -B build/release -G "Visual Studio 17 2022" -A x64 -DCMAKE_PREFIX_PATH="$env:QT_ROOT_DIR" -DCMAKE_INSTALL_PREFIX="$PWD/dist/Musubi"
+          cmake --build build/release --config Release --parallel
           cmake --install build/release --config Release
           windeployqt --release --no-translations --dir dist/Musubi dist/Musubi/Musubi.exe
 
