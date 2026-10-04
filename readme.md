@@ -123,11 +123,12 @@ em [`scripts/BUILD_PREREQUISITES.md`](scripts/BUILD_PREREQUISITES.md).
 ## Publicar no GitHub Releases
 
 1. Atualize a versão em `cpp/CMakeLists.txt`.
-2. Crie e envie uma tag:
+2. Crie e envie uma tag `vX.Y.Z` que corresponda à versão do CMake. Por
+   exemplo, para a versão `1.0.5`:
 
-```bat
-git tag v1.0.0
-git push origin v1.0.0
+```bash
+git tag v1.0.5
+git push origin v1.0.5
 ```
 
 3. O workflow `.github/workflows/release.yml` publica `Musubi.exe` e `Musubi-windows-x64.zip` na release.
