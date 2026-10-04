@@ -19,7 +19,9 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
-          version: "6.12.0"
+          # Pin to the Qt 6.8 LTS line. Qt 6.12.0 metadata was not available
+          # from the public aqt repository when the v1.0.5 release ran.
+          version: "6.8.3"
           arch: "win64_msvc2022_64"
           modules: "qtbase"
 
