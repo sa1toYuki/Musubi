@@ -10,7 +10,9 @@ permissions:
 
 jobs:
   build-windows:
-    runs-on: windows-latest
+    # Qt 6.8.3's win64_msvc2022_64 package requires the VS 2022 toolchain.
+    # windows-latest now points to the VS 2026 image, so pin the VS 2022 image.
+    runs-on: windows-2022
 
     steps:
       - name: Checkout
